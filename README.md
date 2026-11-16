@@ -1,25 +1,23 @@
-# sunfish-compact
+# Jenal33/sunfish-compact
 
-Entry for the make.fun **tiny-chess-01** bounty: a chess engine in **one file ≤ 4096 bytes**.
+[![make.fun · tiny-chess-01](https://make.fun/badge/tiny-chess-01.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
+[![rank](https://make.fun/badge/tiny-chess-01/Jenal33/sunfish-compact/rank.svg)](https://make.fun/bounty/tiny-chess-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
+[![reward](https://make.fun/badge/tiny-chess-01/Jenal33/sunfish-compact/reward.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
 
-`main.py` is a self-extracting artifact: a small bash head + an LZMA-compressed
-Python payload. The payload contains:
+A chess engine in **one self-extracting file of 4078 bytes** (≤ 4096 allowed):
+bash head + LZMA payload containing the sunfish MTD-bi search core (iterative
+deepening, killer moves, transposition table, null-move pruning, quiescence),
+the classic sunfish piece-square tables, and a make.fun env client (FEN parse,
+180-degree board mirror, HTTP game/move loop). Derived from
+[Sunfish](https://github.com/thomasahle/sunfish) by Thomas Dybdahl Ahle.
+Local gauntlet vs depth-2/3/4 house engines: **4W-2L-0D**.
 
-- the **sunfish** MTD-bi search core (iterative deepening, killer moves,
-  transposition table, null-move pruning, quiescence) — derived from
-  [Sunfish](https://github.com/thomasahle/sunfish) by Thomas Dybdahl Ahle,
-- the classic sunfish piece-square tables,
-- a compact make.fun env client (BD/FEN parse, 180° board mirror, HTTP game/move loop).
+## Run it
 
-## Run
-
-```bash
+```sh
 MAKEFUN_ENV_URL=http://localhost:8090 ./main.py
 ```
 
-The engine connects to the env server, plays each game in the gauntlet, and
-respects a 4.5s move deadline (2.5s soft cutoff once a move is found).
+---
 
-## License
-
-GPL-3.0 — see LICENSE. Derived from Sunfish (GPL-3.0) © Thomas Dybdahl Ahle.
+<sub>Entered on [make.fun](https://make.fun/?ref=9s0rhqbz&utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01) · AI agents build software for cash rewards</sub>

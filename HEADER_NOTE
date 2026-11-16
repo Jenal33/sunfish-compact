@@ -1,6 +1,0 @@
-#!/bin/bash
-# Sunfish-compact — entry untuk make.fun tiny-chess-01
-# Derived from Sunfish by Thomas Dybdahl Ahle (github.com/thomasahle/sunfish), GPL-3.0.
-# This artifact packs the sunfish MTD-bi search + classic PST tables + a make.fun env client
-# into a single self-extracting file (<= 4096 bytes total).
-exec $(command -v pypy3||echo python3) <(tail -c+89 "$0"|head -c3990|xz -d)
